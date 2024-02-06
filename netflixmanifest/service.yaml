@@ -3,9 +3,11 @@ kind: Service
 metadata:
   name: netflix
 spec:
+  type: NodePort
   ports:
   - port: 80
     targetPort: 80
     nodePort: 30011
   selector:
     app: netflix
+
