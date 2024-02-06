@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Netflix
+  name: netflix
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: Netflix
+      app: netflix
   template:
     metadata:
       labels:
-        app: Netflix
+        app: netflix
     spec:
       containers:
       - image: lekhaselliah/netflix-usecase:tagname
-        name: Netflix
+        name: netflix
         ports:
         - containerPort: 80
