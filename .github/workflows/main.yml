@@ -19,8 +19,8 @@ jobs:
          sudo apt-get update
          sudo apt-get upgrade -y
          sudo rm -rf node_modules
-         yarn cache clean
-         yarn
+         sudo apt install yarn
+         yarn --version
     - name: Build & Push Image
       run: | 
         echo "${{ secrets.DOCKERPW }}" | docker login -u "lekhaselliah" --password-stdin
