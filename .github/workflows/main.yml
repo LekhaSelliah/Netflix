@@ -13,6 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: yarn install
+      run: | 
+         sudo rm -rf node_modules
+         yarn cache clean
+         yarn
+         yarn start
     - name: Build & Push Image
       run: | 
         echo "${{ secrets.DOCKERPW }}" | docker login -u "lekhaselliah" --password-stdin
