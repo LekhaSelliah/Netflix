@@ -24,5 +24,6 @@ jobs:
     - name: Build & Push Image
       run: | 
         echo "${{ secrets.DOCKERPW }}" | docker login -u "lekhaselliah" --password-stdin
-        docker image build -t lekhaselliah/netflix-usecase:v2 .
-        docker push lekhaselliah/netflix-usecase:v2
+        docker build -t netflix-username . 
+        docker tag netflix-username lekhaselliah/netflix-username:tagname
+        docker push lekhaselliah/netflix-username:tagname
